@@ -1,46 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
-	<meta charset="utf-8"/>
-    <title>Home</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<title th:text="${pageTitle}">Page Title</title>
 </head>
-	<body>
-		 <div class="jumbotron text-center">
- 		 	<h1>Company of Thorin</h1>
- 		 	<p>  Tolkien Dwarfs </p> 
-		 </div>
+<body>
+<nav th:replace="layouts/nav :: navFragment">
+</nav>
 
 
+	<div class="container">
+		<h2>Tolkien Table</h2>
+		<table class="table table-condensed">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Image</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="dwarf : ${dwarfs}">
+					<td th:text="${dwarf.name}">Thorin</td>
+					<td><img src="../static/Thorin.png"
+						th:src="@{/} + ${dwarf.link}" /></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<footer th:replace="layouts/footer :: footerFragment">
+</footer>
+</body>
 
-<div class="container">
-  <div class="row">
-    <div  class="col-sm-6"style="text-align:center">
-      <h3>Names</h3>
-      <p>Sleepy</p>
-    </div>
-    <div class="col-sm-6" style="text-align:center">
-      <h3>Pictures</h3>
-      <p><img src=../static/Sleepy.png></p>
-    </div>
-  </div>
-    <div class="row">
-    <div  class="col-sm-6"style="text-align:center">
-      <h3>Names</h3>
-      <p>Sneezy</p>
-    </div>
-    <div class="col-sm-6" style="text-align:center">
-      <h3>Pictures</h3>
-      <p><img src=../static/Sneezy.png></p>
-    </div>
-  </div>
-</div>
-
-
-	</body>
-	
 </html>

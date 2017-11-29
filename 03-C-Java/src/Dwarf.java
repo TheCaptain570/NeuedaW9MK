@@ -1,39 +1,39 @@
 
 public class Dwarf {
-		private String Name;
-		private String Author;
-		private String Link;
+		private String name;
+		private String author;
+		private String link;
 		
 		public Dwarf() {}
 		
 	public Dwarf(String Name,String Author,String Link) {
-		this.Name = Name;
-		this.Author = Author;
-		this.Link = Link;
+		this.name = Name;
+		this.author = Author;
+		this.link = Link;
 		}
 	
 	public String getName() {
-		return Name;
+		return name;
 	}
 
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
 
 	public String getAuthor() {
-		return Author;
+		return author;
 	}
 
 	public void setAuthor(String Author) {
-		this.Author = Author;
+		this.author = Author;
 	}
 
 	public String getLink() {
-		return Link;
+		return link;
 	}
 
 	public void setLink(String link) {
-		Link = link;
+		this.link = link;
 	}
 }
 

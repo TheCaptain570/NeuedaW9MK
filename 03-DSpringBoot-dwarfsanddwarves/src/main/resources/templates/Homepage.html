@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <title th:text="${pageTitle}">Page Title</title>
+</head>
+
+<nav th:replace="layouts/nav :: navFragment">
+</nav>
+
+
+	<body>
+		 <div class="jumbotron text-center">
+ 		 	<h1>Dwarf Homepage</h1> 
+		 </div>
+		 <div class="container">
+  <div class="row">
+  
+  
+    <div  class="col-sm-6" style="text-align:center">
+      <h3>Disney</h3>
+ <a href= "http://localhost:8080/Disney/" class="btn btn-info" role="button"> Disney</a>
+    </div>
+    
+    <div class="col-sm-6" style="text-align:center">
+      <h3>Tolkien</h3>
+     
+<a href= "http://localhost:8080/Tolk/" class="btn btn-info" role="button">Tolkien</a>
+    </div>
+    
+  </div>
+</div>
+<footer th:replace="layouts/footer :: footerFragment">
+</footer>
+	</body>
+	
+</html>
