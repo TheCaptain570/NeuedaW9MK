@@ -15,8 +15,6 @@ import uk.ac.belfastmet.Building.Service.BuildingService;
 
 public class BuildingsController {
 
-	
-
 
 		@Autowired
 		private BuildingService buildingService;
