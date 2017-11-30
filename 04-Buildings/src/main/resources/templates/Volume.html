@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<title th:text="${pageTitle}">Page Title</title>
+</head>
+<body>
+<nav th:replace="layouts/nav :: navFragment">
+</nav>
+
+
+	<div class="container">
+		<h2>Largest Building Volumes</h2>
+		<table class="table table-condensed">
+			<thead>
+				<tr>
+					<th>Rank</th>
+					<th>Name</th>
+					<th>Country</th>
+					<th>Place</th>
+					<th>FloorArea</th>
+					<th>Volume</th>
+					<th>Image</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="volumes : ${volume}">
+					<td th:text="${volumes.rank}"></td>
+					<td th:text="${volumes.name}"></td>
+					<td th:text="${volumes.country}"></td>
+					<td th:text="${volumes.place}"></td>
+					<td th:text="${volumes.floorArea}"></td>
+					<td th:text="${volumes.volume}"></td>
+					<td><img src="../static/lfa1.jpg" th:src="@{/} + ${volumes.image}" height="100"/></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</body>
+
+</html>

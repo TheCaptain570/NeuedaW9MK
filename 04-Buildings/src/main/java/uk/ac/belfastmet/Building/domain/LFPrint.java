@@ -7,9 +7,9 @@ public class LFPrint {
 	private String place;
 	private double footprint;
 	private String lengthwidth;
-	private String Image;
+	private String image;
 	
-	public LFPrint(int rank,String name, String country, String place, double footprint, String lengthwidth,String Image) {
+	public LFPrint(int rank,String name, String country, String place, double footprint, String lengthwidth,String image) {
 		super();
 		this.rank = rank;
 		this.name = name;
@@ -17,6 +17,7 @@ public class LFPrint {
 		this.place = place;
 		this.footprint = footprint;
 		this.lengthwidth = lengthwidth;
+		this.image = image;
 	}
 	public int getRank() {
 		return rank;
@@ -65,10 +66,10 @@ public class LFPrint {
 		this.lengthwidth = lengthwidth;
 	}
 	public String getImage() {
-		return Image;
+		return image;
 	}
 
 	public void setImage(String image) {
-		Image = image;
+		image = image;
 	}
 }

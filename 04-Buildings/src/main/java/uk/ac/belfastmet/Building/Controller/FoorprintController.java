@@ -10,21 +10,23 @@ import uk.ac.belfastmet.Building.Service.BuildingService;
 import org.springframework.ui.Model;
 
 @Controller
-@RequestMapping("/Volume/")
-public class LUVolumeController {
+@RequestMapping("/Footprint/")
+public class FoorprintController {
 
 	
 	@Autowired
 	private BuildingService buildingService;
 	
 	@GetMapping("/")
-	public String volume(Model model) {
+	public String footprint(Model model) {
 
 		
-		model.addAttribute("pageTitle","Volume");
+		model.addAttribute("pageTitle","FootPrint");
 		this.buildingService = new BuildingService();
-		model.addAttribute("volume",this.buildingService.getVolume());
-		return "Volume";
+		model.addAttribute("footprint",this.buildingService.getFootPrint());
+		return "footprintPage";
 		
 		}
 }
+
+

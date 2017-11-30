@@ -5,11 +5,11 @@ public class LUVolume {
 	private String name;
 	private String country;
 	private String place;
-	private double floorArea;
-	private double volume;
-	private String Image;
+	private int floorArea;
+	private int volume;
+	private String image;
 	
-	public LUVolume(int rank,String name, String country, String place, double floorArea, double volume,String Image) {
+	public LUVolume(int rank,String name, String country, String place, int floorArea, int volume,String image) {
 		super();
 		this.rank = rank;
 		this.name = name;
@@ -17,6 +17,7 @@ public class LUVolume {
 		this.place = place;
 		this.floorArea = floorArea;
 		this.volume = volume;
+		this.image = image;
 	}
 
 	public int getRank() {
@@ -50,27 +51,27 @@ public class LUVolume {
 		this.place = place;
 	}
 
-	public double getFloorArea() {
+	public int getFloorArea() {
 		return floorArea;
 	}
 
-	public void setFloorArea(double floorArea) {
+	public void setFloorArea(int floorArea) {
 		this.floorArea = floorArea;
 	}
 
-	public double getVolume() {
+	public int getVolume() {
 		return volume;
 	}
 
-	public void setVolume(double volume) {
+	public void setVolume(int volume) {
 		this.volume = volume;
 	}
 
 	public String getImage() {
-		return Image;
+		return image;
 	}
 
 	public void setImage(String image) {
-		Image = image;
+		this.image = image;
 	}
 }

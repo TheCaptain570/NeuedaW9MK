@@ -7,24 +7,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import uk.ac.belfastmet.Building.Service.BuildingService;
-import org.springframework.ui.Model;
-
 @Controller
-@RequestMapping("/Volume/")
-public class LUVolumeController {
-
+@RequestMapping("/Area/")
+public class AreaController {
 	
 	@Autowired
 	private BuildingService buildingService;
 	
 	@GetMapping("/")
-	public String volume(Model model) {
+	public String area(Model model) {
 
 		
-		model.addAttribute("pageTitle","Volume");
+		model.addAttribute("pageTitle","Areas");
 		this.buildingService = new BuildingService();
-		model.addAttribute("volume",this.buildingService.getVolume());
-		return "Volume";
+		model.addAttribute("areas",this.buildingService.getAreas());
+		return "Areas";
 		
 		}
 }

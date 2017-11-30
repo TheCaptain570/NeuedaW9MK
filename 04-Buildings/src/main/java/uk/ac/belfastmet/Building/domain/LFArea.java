@@ -15,6 +15,7 @@ public class LFArea {
 		this.country = country;
 		this.place = place;
 		this.floorArea = floorArea;
+		this.Image = Image;
 	}
 	
 	public int getRank() {
