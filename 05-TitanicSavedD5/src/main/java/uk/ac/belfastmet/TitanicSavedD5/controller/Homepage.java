@@ -38,5 +38,16 @@ public class Homepage {
 		model.addAttribute("titanicpassengers",titanicRepository.findAll());
 		return "Passengers";
 	}	
-	
+	@GetMapping("/Surr/")
+	public String survived(Model model) {
+		model.addAttribute("pageTitle","Survived");
+		model.addAttribute("titanicpassengers",titanicRepository.findBySurvived("1"));
+		return "Passengers";
+	}	
+	@GetMapping("/Cabin/")
+	public String Cabin(Model model) {
+		model.addAttribute("pageTitle","Survived");
+		model.addAttribute("titanicpassengers",titanicRepository.findByAndCabinIsNotNull());
+		return "Passengers";
+	}
 }
