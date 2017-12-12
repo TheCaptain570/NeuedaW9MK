@@ -15,11 +15,30 @@
 <body>
 	<div class="jumbotron text-center">
 		<h1>Cereal</h1>
-		<p>Analysis ( kill me) </p>
+		<p>Analysis</p>
 	</div>
 
 	<div class="container">
-
-	</div>
+		<h2>C</h2>
+		<table class="table table-condensed">
+			<thead>
+				<tr>
+					<th>Manufacturer</th>
+					<th>Name</th>
+					<th>Links(View Edit Delete)</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="cereal : ${cerealRepository}">
+					<td th:text="${cereal.manufacturer}"></td>
+					<td th:text="${cereal.name}"></td>
+		  				<td><a href="#" th:href="@{cereal/view/} + ${cereal.cereal_id}">View</a> 
+						<a href="#" th:href="@{cereal/edit/} + ${cereal.cereal_id}">Edit</a> 
+						<a href="#" th:href="@{cereal/delete/} + ${cereal.cereal_id}">Delete</a> </td>
+				</tr>
+			</tbody>
+		</table>
+			<a href="/cereal/add/" class="btn btn-seconday btn-lg active" role="button" aria-pressed="true">Add</a>
+			</div>
 </body>
 </html>

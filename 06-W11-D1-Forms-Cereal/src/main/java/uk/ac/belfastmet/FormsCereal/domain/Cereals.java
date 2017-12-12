@@ -1,9 +1,21 @@
 package uk.ac.belfastmet.FormsCereal.domain;
 
-public class Cereal {
-	Integer Cereal_id;  
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
+@Entity
+public class Cereals {
+	
+	@Id
+	@GeneratedValue
+	Integer Cereal_id;
+	@NotEmpty
 	String Manufacturer; 
-	String cereal;          
+	@NotEmpty
+	String name;          
 	double Energy;    
 	double Calories;    
 	double Protein;       
@@ -12,16 +24,19 @@ public class Cereal {
 	double Fat;            
 	double Saturates;     
 	double Fibre;         
-	double Sodium;       
-	double Salt;          
-	double Iron;
-	public Cereal(Integer cereal_id, String manufacturer, String cereal, double energy, double calories, double protein,
-			double carbohydrate, double sugars, double fat, double saturates, double fibre, double sodium, double salt,
-			double iron) {
+	String Sodium;       
+	String Salt;          
+	String Iron;
+	public Cereals() {
 		super();
+	}
+	public Cereals(Integer cereal_id, String manufacturer, String name, double energy, double calories, double protein,
+			double carbohydrate, double sugars, double fat, double saturates, double fibre, String sodium, String salt,
+			String iron) {
+
 		Cereal_id = cereal_id;
 		Manufacturer = manufacturer;
-		this.cereal = cereal;
+		this.name = name;
 		Energy = energy;
 		Calories = calories;
 		Protein = protein;
@@ -46,11 +61,11 @@ public class Cereal {
 	public void setManufacturer(String manufacturer) {
 		Manufacturer = manufacturer;
 	}
-	public String getCereal() {
-		return cereal;
+	public String getName() {
+		return name;
 	}
-	public void setCereal(String cereal) {
-		this.cereal = cereal;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public double getEnergy() {
 		return Energy;
@@ -100,22 +115,22 @@ public class Cereal {
 	public void setFibre(double fibre) {
 		Fibre = fibre;
 	}
-	public double getSodium() {
+	public String getSodium() {
 		return Sodium;
 	}
-	public void setSodium(double sodium) {
+	public void setSodium(String sodium) {
 		Sodium = sodium;
 	}
-	public double getSalt() {
+	public String getSalt() {
 		return Salt;
 	}
-	public void setSalt(double salt) {
+	public void setSalt(String salt) {
 		Salt = salt;
 	}
-	public double getIron() {
+	public String getIron() {
 		return Iron;
 	}
-	public void setIron(double iron) {
+	public void setIron(String iron) {
 		Iron = iron;
 	}        
 	
