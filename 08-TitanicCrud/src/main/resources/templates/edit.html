@@ -1,0 +1,52 @@
+ <!DOCTYPE html>
+ <html lang="en" xmlns:th="http://thymeleaf.org">
+ <head>
+ <link rel="stylesheet"
+ 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" /> 
+ <script
+ 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script
+ 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+ </head>
+ <body>
+ 	
+ 	<div class="jumbotron text-center">
+ 	<h2>Edit</h2>
+ 	</div>
+ 
+ 	<div class="container">
+ 
+ 			<table class="table table-striped">
+ 				<thead>
+ 					<tr>
+ 						<th>Nutrition</th>
+ 						<th>Value</th>
+ 					</tr>
+ 				</thead>
+ 				<tbody>
+ 					<tr>
+ 						<td>Energy</td>
+ 						<td><input type="text" class="form-control"
+ 							th:field="${passenger.name}" /></td>
+ 					</tr>
+ 					<tr>
+ 						<td>Calories</td>
+ 						<td><input type="text" class="form-control"
+ 							th:field="${passenger.sex}" /></td>
+ 					</tr>
+ 					<tr>
+ 						<td>Protein</td>
+ 						<td><input type="text" class="form-control"
+ 							th:field="${passenger.survived}" /></td>
+ 					</tr>
+ 					<tr>
+ 						<td>Carbohydrate</td>
+ 						<td><input type="text" class="form-control"
+ 							th:field="${passenger.cabin}" /></td>
+ 					</tr>
+ 				</tbody>
+ 			</table>
+ 			<button type="submit" class="btn btn-primary">Save</button>
+ 	</div>
+ </body>
+ </html>
