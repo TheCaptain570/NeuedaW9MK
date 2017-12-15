@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 //import uk.ac.belfastmet.FormsCereal.domain.Cereals;
@@ -58,6 +59,16 @@ public class HomepageController {
 		model.addAttribute("titanicpassengers",titanicRepository.findByAndCabinIsNotNull());
 		return "Passengers";
 	}
+		
+	@PostMapping("/Search")
+	public String search(@RequestParam("name") String name, Model model) {
+		model.addAttribute("name", name);
+		model.addAttribute("Passengers", this.titanicRepository.findByNameContaining(name));
+		return "search";
+	}
+			
+		
+	
 	@GetMapping("/view/{passengerid}")
 	public String view(@PathVariable("passengerid") Integer passengerid, Model model) {
 		model.addAttribute("pageTitle","View Passenger");

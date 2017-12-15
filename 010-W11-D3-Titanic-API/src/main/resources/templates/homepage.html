@@ -1,0 +1,44 @@
+<html>
+<head>
+<title th:text="${pageTitle}">Titanic Information</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+	<nav th:replace="layouts/nav:: navFragment"></nav>
+
+	<div class="jumbotron text-center">
+		<h1>Titanic Passengers HomePage</h1>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4" style="text-align: center">
+				<h3>All Passengers</h3>
+
+				<a href="http://localhost:8080/passengers/" class="btn btn-info"
+					role="button">All Passengers</a>
+			</div>
+			<div class="col-sm-4" style="text-align: center">
+				<h3>Surviving Passengers</h3>
+				<a href="http://localhost:8080/tolkien/" class="btn btn-info"
+					role="button">Surviving Passengers</a>
+			</div>
+			<div class="col-sm-4" style="text-align: center">
+				<h3>Southampton Passengers</h3>
+
+				<a href="http://localhost:8080/disney/" class="btn btn-info"
+					role="button">Southampton Passengers</a>
+			</div>
+		</div>
+	</div>
+
+	<footer th:replace="layouts/footer ::footerFragment"> </footer>
+</body>
+</html>

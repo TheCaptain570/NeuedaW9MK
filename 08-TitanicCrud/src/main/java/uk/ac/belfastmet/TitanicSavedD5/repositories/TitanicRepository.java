@@ -14,5 +14,7 @@ public interface TitanicRepository extends CrudRepository<Passenger, Integer> {
 
 	Iterable<Passenger> findBySurvived(String string);
 
-	Iterable<Passenger> findByAndCabinIsNotNull();	
+	Iterable<Passenger> findByAndCabinIsNotNull();
+
+	Iterable<Passenger> findByNameContaining(String name);	
 }
