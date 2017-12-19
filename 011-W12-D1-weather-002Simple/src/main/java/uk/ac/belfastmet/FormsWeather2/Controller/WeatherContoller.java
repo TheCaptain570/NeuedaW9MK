@@ -24,19 +24,43 @@ public class WeatherContoller {
 	@GetMapping("/")
 	public String home(Model model){
 		model.addAttribute("pageTitle","Weather");
-		
-		String belfastWeatherURL= this.baseWeatherUrl + "belfast";
-		
-		RestTemplate restTemplate = new RestTemplate();
-		TodaysWeather todaysWeather = restTemplate.getForObject(belfastWeatherURL, TodaysWeather.class);
-		Weather weather = todaysWeather.getWeather();
-		
-		model.addAttribute("weather",weather);
+	
 		return "homePage";
 	
 	}
-
-
+	@GetMapping("/belfast")
+	public String belfast(Model model){
+		model.addAttribute("pageTitle","Weather");	
+		String belfastWeatherURL= this.baseWeatherUrl + "belfast";	
+		RestTemplate restTemplate = new RestTemplate();
+		TodaysWeather todaysWeather = restTemplate.getForObject(belfastWeatherURL, TodaysWeather.class);
+		Weather weather = todaysWeather.getWeather();	
+		model.addAttribute("weather",weather);
+		return "belfast";
+	}
+	@GetMapping("/london")
+	public String london(Model model){
+		model.addAttribute("pageTitle","Weather");	
+		String belfastWeatherURL= this.baseWeatherUrl + "london";	
+		RestTemplate restTemplate = new RestTemplate();
+		TodaysWeather todaysWeather = restTemplate.getForObject(belfastWeatherURL, TodaysWeather.class);
+		Weather weather = todaysWeather.getWeather();	
+		model.addAttribute("weather",weather);
+		return "london";
+	}
+	@GetMapping("/dublin")
+	public String dublin(Model model){
+		model.addAttribute("pageTitle","Weather");	
+		String belfastWeatherURL= this.baseWeatherUrl + "dublin";	
+		RestTemplate restTemplate = new RestTemplate();
+		TodaysWeather todaysWeather = restTemplate.getForObject(belfastWeatherURL, TodaysWeather.class);
+		Weather weather = todaysWeather.getWeather();	
+		model.addAttribute("weather",weather);
+		return "dublin";
+	}	
+	
+	
+	
 	public String getBaseWeatherUrl() {
 		return baseWeatherUrl;
 	}
